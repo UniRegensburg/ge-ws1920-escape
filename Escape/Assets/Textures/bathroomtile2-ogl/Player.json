@@ -1,0 +1,74 @@
+{
+	"Name" : 
+	"Age" :
+	"Sex" :
+	"Attractivity" :
+	
+	
+	"Attitudes" :
+	{
+		"Alcohol" :
+		"Smoking" :
+		"Sex" :
+	}
+	
+	"Interests" :
+	{
+		"Politics" : 0.0,
+		"Lifestyle" : 0.0,
+	}
+
+	"Psychometrics" :
+	{
+		"IQ" : 100,
+		"Openness" : 0.0,
+		"Consciousness" : 0.0,
+		"Extraversion" : 0,0,
+		"Agreeability" : 0.0,
+		"Neuroticism" : 0,0
+	}
+		
+	
+	"Emotions" :
+	{
+		"Joy" : 0.0,
+		"Neutral" : 0.0,
+		"Anger" : 0.0,
+		"Surprise" : 0.0,
+		"Disgust" : 0.0,
+		"Fear" : 0.0,
+		"Contempt" : 0.0,
+		"Sadness" : 0.0,
+		"Bored" : 0.0,
+		"Tired" : 0.0,
+		"Sleep" : 0.0,
+		"Effort" : 0.0
+	},
+	
+	"Relations" :
+	{
+		Player :
+		{
+			"Hate" : 0.0,
+			"Interested" : 0.0,
+			"Friend" : 0.0,
+			"Love" : 0.0
+		}
+	}
+	
+	"Interactions" :
+	{
+		"Stand" : 
+		{
+			"Stand01" : false,
+			"Stand02" : false,
+		}
+		
+		
+		
+		
+	}
+	
+	"DialogueTrees" :
+	{
+		

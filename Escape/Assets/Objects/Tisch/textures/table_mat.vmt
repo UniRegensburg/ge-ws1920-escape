@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "BlenderRepo/Blender/officeTable/textures/table_mat"
+	"$translucent" 1
+}
