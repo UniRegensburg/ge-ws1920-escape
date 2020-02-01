@@ -1,57 +1,183 @@
 fileFormatVersion: 2
 guid: e03931d792aef2747a9d9cc9574b4c4a
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Cylinder
-    100002: Cylinder_001
-    100004: Cylinder_002
-    100006: Cylinder_003
-    100008: //RootNode
-    100010: Fenster
-    100012: Gehaeuse
-    100014: Griff
-    100016: Schalter
-    400000: Cylinder
-    400002: Cylinder_001
-    400004: Cylinder_002
-    400006: Cylinder_003
-    400008: //RootNode
-    400010: Fenster
-    400012: Gehaeuse
-    400014: Griff
-    400016: Schalter
-    2100000: Material_002
-    2100002: Material_001
-    2100004: Material
-    2300000: Cylinder
-    2300002: Cylinder_001
-    2300004: Cylinder_002
-    2300006: Cylinder_003
-    2300008: Fenster
-    2300010: Gehaeuse
-    2300012: Griff
-    2300014: Schalter
-    3300000: Cylinder
-    3300002: Cylinder_001
-    3300004: Cylinder_002
-    3300006: Cylinder_003
-    3300008: Fenster
-    3300010: Gehaeuse
-    3300012: Griff
-    3300014: Schalter
-    4300000: Cylinder_003
-    4300002: Cylinder_001
-    4300004: Cylinder_002
-    4300006: Cylinder
-    4300008: Fenster
-    4300010: Schalter
-    4300012: Griff
-    4300014: Gehaeuse
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Cylinder
+  - first:
+      1: 100002
+    second: Cylinder_001
+  - first:
+      1: 100004
+    second: Cylinder_002
+  - first:
+      1: 100006
+    second: Cylinder_003
+  - first:
+      1: 100008
+    second: //RootNode
+  - first:
+      1: 100010
+    second: Fenster
+  - first:
+      1: 100012
+    second: Gehaeuse
+  - first:
+      1: 100014
+    second: Griff
+  - first:
+      1: 100016
+    second: Schalter
+  - first:
+      4: 400000
+    second: Cylinder
+  - first:
+      4: 400002
+    second: Cylinder_001
+  - first:
+      4: 400004
+    second: Cylinder_002
+  - first:
+      4: 400006
+    second: Cylinder_003
+  - first:
+      4: 400008
+    second: //RootNode
+  - first:
+      4: 400010
+    second: Fenster
+  - first:
+      4: 400012
+    second: Gehaeuse
+  - first:
+      4: 400014
+    second: Griff
+  - first:
+      4: 400016
+    second: Schalter
+  - first:
+      21: 2100000
+    second: Material_002
+  - first:
+      21: 2100002
+    second: Material_001
+  - first:
+      21: 2100004
+    second: Material
+  - first:
+      23: 2300000
+    second: Cylinder
+  - first:
+      23: 2300002
+    second: Cylinder_001
+  - first:
+      23: 2300004
+    second: Cylinder_002
+  - first:
+      23: 2300006
+    second: Cylinder_003
+  - first:
+      23: 2300008
+    second: Fenster
+  - first:
+      23: 2300010
+    second: Gehaeuse
+  - first:
+      23: 2300012
+    second: Griff
+  - first:
+      23: 2300014
+    second: Schalter
+  - first:
+      33: 3300000
+    second: Cylinder
+  - first:
+      33: 3300002
+    second: Cylinder_001
+  - first:
+      33: 3300004
+    second: Cylinder_002
+  - first:
+      33: 3300006
+    second: Cylinder_003
+  - first:
+      33: 3300008
+    second: Fenster
+  - first:
+      33: 3300010
+    second: Gehaeuse
+  - first:
+      33: 3300012
+    second: Griff
+  - first:
+      33: 3300014
+    second: Schalter
+  - first:
+      43: 4300000
+    second: Cylinder_003
+  - first:
+      43: 4300002
+    second: Cylinder_001
+  - first:
+      43: 4300004
+    second: Cylinder_002
+  - first:
+      43: 4300006
+    second: Cylinder
+  - first:
+      43: 4300008
+    second: Fenster
+  - first:
+      43: 4300010
+    second: Schalter
+  - first:
+      43: 4300012
+    second: Griff
+  - first:
+      43: 4300014
+    second: Gehaeuse
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platte
+    second: {fileID: 2100000, guid: 9e1f1703ed28bc04ea79afa958c74026, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Schalter
+    second: {fileID: 2100000, guid: d2bc369ff8826b24382e057ca63fc85f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Schalter_001
+    second: {fileID: 2100000, guid: d2bc369ff8826b24382e057ca63fc85f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spuele
+    second: {fileID: 2100000, guid: df31f9654c7b11940b33399d6df4e467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Verkleidung
+    second: {fileID: 2100000, guid: 758463b44b659684fbebaadd145ad98d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wasserhahn
+    second: {fileID: 2100000, guid: df31f9654c7b11940b33399d6df4e467, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -78,13 +204,43 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      internalID: 7400000
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -92,27 +248,32 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -122,6 +283,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
