@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 1989289236423521904
     second: Default Take
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RedLight
+    second: {fileID: 2100000, guid: 857c1c16fa88d8e46a61465664494cf9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
