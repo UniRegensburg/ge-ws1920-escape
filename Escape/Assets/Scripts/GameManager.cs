@@ -1,18 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float timeLeft = 300.0f;
+    public Text countdownText; 
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        timeLeft -= Time.deltaTime;
+        countdownText.text = "Time left: "+(timeLeft).ToString("0");
+        if (timeLeft < 0)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        throw new NotImplementedException();
     }
 }
