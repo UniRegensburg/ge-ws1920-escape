@@ -57,7 +57,7 @@ public class PlayerManager : MonoBehaviour
         RaycastHit rHit;
 
        //Object in sight
-       if (Physics.Raycast(transform.position, transform.forward, out rHit, 3, layer))
+       if (Physics.Raycast(transform.position, transform.forward, out rHit, 4, layer))
        {
             GameObject objectInFocus = rHit.collider.gameObject; //Referenz auf Objekt im Fokus
             String sort = rHit.collider.tag;
@@ -158,10 +158,9 @@ public class PlayerManager : MonoBehaviour
 
                 else if (objectInFocus.tag == "Door")
                 {
-                    if (GUILayout.Button("Öffnen / Schließen", buttonStyle))
+                    if (GUILayout.Button("Öffnen", buttonStyle))
                     {
-                        Door_Manager dm = objectInFocus.GetComponent<Door_Manager>();
-                        dm.OpenClose();
+                        
                     }
 
                 }
