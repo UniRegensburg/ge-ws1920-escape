@@ -17,8 +17,10 @@ public class Door_Manager : MonoBehaviour
 
     public void OpenClose()
     {
-        if (!isLocked)
-        anim.SetBool("open", !anim.GetBool("open"));		
+        if (isLocked==false)
+        {
+            anim.SetBool("open", !anim.GetBool("open"));
+        }
 	}
     
 }

@@ -7,7 +7,20 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public float timeLeft = 300.0f;
-    public Text countdownText; 
+    public Text countdownText;
+    public int level;
+
+   
+
+    void Start()
+    {
+        String name = "Level" + level;
+        GameObject g = GameObject.Find(name);
+        GameObject k = GameObject.Find("key");
+        k.transform.position = g.transform.position;
+
+
+    }
 
 
     void Update()

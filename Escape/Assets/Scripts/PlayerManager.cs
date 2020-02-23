@@ -26,6 +26,11 @@ public class PlayerManager : MonoBehaviour
 
     List<String> inventar;
 
+    public bool HasItem(String item)
+    {
+        return (inventar.Contains(item));
+    }
+
 
 
 
@@ -46,6 +51,8 @@ public class PlayerManager : MonoBehaviour
         {
             playerMovement.mouseLook = false;
         }
+
+        Debug.Log(HasItem("key"));
     }
 
 
@@ -160,6 +167,12 @@ public class PlayerManager : MonoBehaviour
                 {
                     if (GUILayout.Button("Öffnen", buttonStyle))
                     {
+                        Door_Manager dm = objectInFocus.GetComponent<Door_Manager>();
+                        if (inventar.Contains("key")) 
+                        {
+                            dm.isLocked = false;
+                            dm.OpenClose();
+                        }
                         
                     }
 
