@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        throw new NotImplementedException();
+        GameObject explosion = GameObject.Find("Explosion");
+        explosion.SetActive(true);
     }
 }
