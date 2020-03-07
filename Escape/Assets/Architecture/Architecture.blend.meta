@@ -36,7 +36,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Schlafzimmer
-    second: {fileID: 2100000, guid: 431fb02a3b692774aa44feabb67541c0, type: 2}
+    second: {fileID: 2100000, guid: d55ffb2fdabea5445ba67b2613ce665b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -46,7 +46,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tapete
-    second: {fileID: 2100000, guid: 758463b44b659684fbebaadd145ad98d, type: 2}
+    second: {fileID: 2100000, guid: d55ffb2fdabea5445ba67b2613ce665b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
