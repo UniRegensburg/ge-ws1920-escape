@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 711, y: 494}
   m_MaxSize: {x: 18006, y: 14044}
   vertical: 0
-  controlID: 1986
+  controlID: 1094
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,9 +171,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.8114171, y: 3.808243, z: -3.0032597}
+    m_Target: {x: 0.26608986, y: 3.325978, z: 3.0001376}
     speed: 2
-    m_Value: {x: -0.8114171, y: 3.808243, z: -3.0032597}
+    m_Value: {x: 0.26608986, y: 3.325978, z: 3.0001376}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -202,13 +202,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.011691448, y: 0.98784393, z: -0.124228954, w: -0.09303639}
+    m_Target: {x: 0.20189084, y: 0.08157958, z: -0.016868757, w: 0.9758902}
     speed: 2
-    m_Value: {x: -0.0116910925, y: 0.9878139, z: -0.12422518, w: -0.09303356}
+    m_Value: {x: 0.20188466, y: 0.081577085, z: -0.016868241, w: 0.9758603}
   m_Size:
-    m_Target: 3.2326481
+    m_Target: 2.4962406
     speed: 2
-    m_Value: 3.2326481
+    m_Value: 2.4962406
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 494}
   m_MaxSize: {x: 10004, y: 14044}
   vertical: 1
-  controlID: 1987
+  controlID: 1066
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -376,10 +376,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 678}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8efbffffb23d0000
+      m_ExpandedIDs: 08faffff8efbffffb23d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -467,20 +467,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - "Assets/Objects/T\xFCr"
+    - Assets/Textures/[4K]Fabric06
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - "Assets/Objects/T\xFCr"
+  - Assets/Textures/[4K]Fabric06
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity Projects\Escape\Escape
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 625}
-    m_SelectedIDs: 2c330000
-    m_LastClickedID: 13100
-    m_ExpandedIDs: 00000000382b0000402b0000062c000068300000ec35000000ca9a3b
+    scrollPos: {x: 0, y: 646}
+    m_SelectedIDs: 782b0000
+    m_LastClickedID: 11128
+    m_ExpandedIDs: 00000000382b0000402b0000062c000068300000ec350000d03b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -508,7 +508,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000382b0000402b0000062c000068300000ec35000000ca9a3b
+    m_ExpandedIDs: 00000000382b0000402b0000062c000068300000ec350000d03b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -533,8 +533,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 183e0000
-    m_LastClickedInstanceID: 15896
+    m_SelectedInstanceIDs: 663e0000
+    m_LastClickedInstanceID: 15974
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: dc3400000000000092440000c0370000fc340000743a0000
     m_RenameOverlay:
