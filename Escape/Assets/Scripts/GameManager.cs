@@ -6,8 +6,24 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public float timeLeft = 300.0f;
-    public Text countdownText; 
+    public float timeLeft = 10.0f;
+    public Text countdownText;
+    public int level;
+    public GameObject explosion;
+
+    
+
+   
+
+    void Start()
+    {
+        String name = "Level" + level;
+        GameObject g = GameObject.Find(name);
+        GameObject k = GameObject.Find("key");
+        k.transform.position = g.transform.position;
+
+
+    }
 
 
     void Update()
@@ -22,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        throw new NotImplementedException();
+        
+        explosion.SetActive(true);
     }
 }

@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: sideboardopen
+  m_Controller: {fileID: 9100000, guid: e8535b82ae42a3848846c880e2705ad3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d65ee2c4c03eb344bae40ee31b3859ad, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3cb95f4eb8c95b94ab7a51008f2b3357, type: 3}
