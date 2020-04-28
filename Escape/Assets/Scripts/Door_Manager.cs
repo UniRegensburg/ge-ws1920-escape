@@ -15,12 +15,20 @@ public class Door_Manager : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void OpenClose()
+    public void Open()
     {
         if (isLocked==false)
         {
-            anim.SetBool("open", !anim.GetBool("open"));
+            anim.SetBool("open", true);
+            
         }
 	}
-    
+
+    public void Close()
+    {
+        anim.SetBool("open", false);
+    }
+
+
+
 }

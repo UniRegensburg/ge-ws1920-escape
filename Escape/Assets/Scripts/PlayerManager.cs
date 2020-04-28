@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
 
     int layer = 1 << 9;
 
-    float geld = 20.00f;
+
 
     List<String> inventar;
 
@@ -31,7 +31,12 @@ public class PlayerManager : MonoBehaviour
         return (inventar.Contains(item));
     }
 
+    public void EmptyInventory()
+    {
+        inventar.Clear();
+    }
 
+  
 
 
     void Start()
@@ -64,7 +69,7 @@ public class PlayerManager : MonoBehaviour
         RaycastHit rHit;
 
        //Object in sight
-       if (Physics.Raycast(transform.position, transform.forward, out rHit, 4, layer))
+       if (Physics.Raycast(transform.position, transform.forward, out rHit, 5, layer))
        {
             GameObject objectInFocus = rHit.collider.gameObject; //Referenz auf Objekt im Fokus
             String sort = rHit.collider.tag;
@@ -171,7 +176,7 @@ public class PlayerManager : MonoBehaviour
                         if (inventar.Contains("key")) 
                         {
                             dm.isLocked = false;
-                            dm.OpenClose();
+                            dm.Open();
                         }
                         
                     }
@@ -196,7 +201,7 @@ public class PlayerManager : MonoBehaviour
             if (itemsVisible)
             {
                 GUILayout.Box("Inventar", boxStyle);
-                GUILayout.Button("Geld: "+geld.ToString(), buttonStyle);
+                
                 foreach (string s in inventar)
                 {
                     GUILayout.Button(s, buttonStyle);
@@ -226,6 +231,7 @@ public class PlayerManager : MonoBehaviour
     void OnDisable()
     {
         VD.EndDialogue();
+        playerMovement.mouseLook = true;
     }
 
     void EnableUI()
