@@ -19,14 +19,16 @@ public class Door_Manager : MonoBehaviour
     {
         if (isLocked==false)
         {
-            anim.SetBool("open", true);
+           // anim.SetBool("open", true);
+            anim.SetTrigger("open");
             
         }
 	}
 
     public void Close()
     {
-        anim.SetBool("open", false);
+        //anim.SetBool("open", false);
+        anim.SetTrigger("close");
     }
 
 
