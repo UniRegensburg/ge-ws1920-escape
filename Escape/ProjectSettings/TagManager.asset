@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Switch
   - female
+  - Wall
   layers:
   - Default
   - TransparentFX

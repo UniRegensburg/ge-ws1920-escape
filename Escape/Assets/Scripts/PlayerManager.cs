@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VIDE_Data;
@@ -9,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 { 
     public GameObject playerController;
     FirstPersonController playerMovement;
+    public GameManager gm;
 
     GameObject objectInFocus;
     GUIStyle boxStyle;
@@ -45,170 +45,136 @@ public class PlayerManager : MonoBehaviour
         inventar = new List<string>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            itemsVisible = !itemsVisible;
-        }
+    
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            playerMovement.mouseLook = false;
-        }
+    
 
-        Debug.Log(HasItem("key"));
-    }
-
+    
 
     void OnGUI()
    {
-        GUILayout.BeginArea(new Rect(Screen.width / 4, Screen.height / 2, Screen.width / 2, Screen.height / 2));
-        
-       
+        GUILayout.BeginArea(new Rect(Screen.width / 4, Screen.height / 2, Screen.width / 2, Screen.height / 2));      
+        SetLayout(Color.white);
         RaycastHit rHit;
 
-       //Object in sight
-       if (Physics.Raycast(transform.position, transform.forward, out rHit, 5, layer))
-       {
+        //Object in sight
+        if (Physics.Raycast(transform.position, transform.forward, out rHit, 5, layer))
+        {
             GameObject objectInFocus = rHit.collider.gameObject; //Referenz auf Objekt im Fokus
-            String sort = rHit.collider.tag;
+            String tag = objectInFocus.tag;
 
-            switch (sort)
+            if (tag != "Wall")
             {
-                case "female":
-                    SetLayout(Color.magenta);
-                    break;
-                case "male":
-                    SetLayout(Color.blue);
-                    break;
-                
-
-                default:
-                    SetLayout(Color.white);
-                    break;
-            }
 
 
-            EnableUI();
-            itemsVisible = false;
-            
-            //GUILayout.Box(objectInFocus.name, boxStyle);// Überschrift
+                EnableUI();
+                //itemsVisible = false;
 
-            //Object has Dialogue => It's a NPC
-            if (objectInFocus.GetComponent<VIDE_Assign>() != null)
-            {
-                Debug.Log("Dialogue found");
-                diag = objectInFocus.GetComponent<VIDE_Assign>();
 
-                if (!VD.isActive) //Neuen Dialog starten
+
+                //*******************************************************Object has Dialogue************************************************************************************
+                if (objectInFocus.GetComponent<VIDE_Assign>() != null)
                 {
-                    GUILayout.Box(objectInFocus.name, boxStyle);
-                    if (GUILayout.Button("Ansprechen", buttonStyle))
+                    diag = objectInFocus.GetComponent<VIDE_Assign>();
+
+                    if (!VD.isActive) //Start new dialogue
                     {
-                        VD.BeginDialogue(diag); //We've attached a VIDE_Assign to this same gameobject, so we just call the component
-                    }
-                }
-
-
-                else //Dialog läuft bereits
-                {                    
-                    var data = VD.nodeData; //Quick reference
-
-                    /********************            SPIELER                            *******************/
-
-                    if (data.isPlayer) // If it's a player node, let's show all of the available options as buttons
-                    {
-
-                        SetLayout(Color.green);
-                        GUILayout.Box("Du", boxStyle);
-
-                        for (int i = 0; i < data.comments.Length; i++)
+                        GUILayout.Box(objectInFocus.name, boxStyle);
+                        if (GUILayout.Button("Interact", buttonStyle))
                         {
-                            if (GUILayout.Button(data.comments[i], buttonStyle)) //When pressed, set the selected option and call Next()
+                            VD.BeginDialogue(diag); //We've attached a VIDE_Assign to this same gameobject, so we just call the component
+                        }
+                    }
+
+
+                    else //Dialogue already running
+                    {
+                        var data = VD.nodeData; //Quick reference
+
+                        /********************            Player                            *******************/
+
+                        if (data.isPlayer) // If it's a player node, let's show all of the available options as buttons
+                        {
+
+                            SetLayout(Color.green);
+                            GUILayout.Box("You", boxStyle);
+
+                            for (int i = 0; i < data.comments.Length; i++)
                             {
-                                data.commentIndex = i;
+                                if (GUILayout.Button(data.comments[i], buttonStyle)) //When pressed, set the selected option and call Next()
+                                {
+                                    data.commentIndex = i;
+                                    VD.Next();
+                                }
+                            }
+                        }
+
+                        /********************            NPC                            *******************/
+
+                        else //if it's a NPC node, Let's show the comment and add a button to continue
+                        {
+                            GUILayout.Box(objectInFocus.name, boxStyle);// Überschrift
+                            if (GUILayout.Button(data.comments[data.commentIndex], buttonStyle))
+                            {
                                 VD.Next();
                             }
                         }
-                    }
 
-                    /********************            NPC                            *******************/
-
-                    else //if it's a NPC node, Let's show the comment and add a button to continue
-                    {
-                        GUILayout.Box(objectInFocus.name, boxStyle);// Überschrift
-                        if (GUILayout.Button(data.comments[data.commentIndex], buttonStyle))
+                        if (data.isEnd) // If it's the end, let's just call EndDialogue
                         {
-                            VD.Next();
+                            VD.EndDialogue();
                         }
-                    }
-
-                    if (data.isEnd) // If it's the end, let's just call EndDialogue
-                    {
-                        VD.EndDialogue();
-                    }
-                }               
-            }
-
-
-
-            //Object doesn't have a Dialogue => No NPC
-            else
-            {
-                GUILayout.Box(objectInFocus.name, boxStyle);
-
-                if (objectInFocus.tag == "Interactable")
-                {
-
-                    if (GUILayout.Button("Nehmen", buttonStyle))
-                    {
-                        inventar.Add(objectInFocus.name);
-                        Destroy(objectInFocus);
                     }
                 }
 
-                else if (objectInFocus.tag == "Door")
+
+
+                //********************************************************Object doesn't have a Dialogue***********************************************************************
+                else
                 {
-                    if (GUILayout.Button("Öffnen", buttonStyle))
+                    GUILayout.Box(objectInFocus.name, boxStyle);
+
+                    if (objectInFocus.name == "Key")
                     {
-                        Door_Manager dm = objectInFocus.GetComponent<Door_Manager>();
-                        if (inventar.Contains("key")) 
+
+                        if (GUILayout.Button("Take", buttonStyle))
                         {
-                            dm.isLocked = false;
-                            dm.Open();
+                            inventar.Add(objectInFocus.name);
+                            gm.Shorttime();
+                            Destroy(objectInFocus);
                         }
-                        
                     }
 
-                }
-
-                else if (objectInFocus.tag == "Switch")
-                {
-                    if (GUILayout.Button("Einschalten / Ausschalten", buttonStyle))
+                    else if (objectInFocus.tag == "Door")
                     {
-                        SwitchManager sm = objectInFocus.GetComponent<SwitchManager>();
-                        sm.turnOnOff();
+                        if (GUILayout.Button("Open", buttonStyle))
+                        {
+                            Door_Manager dm = objectInFocus.GetComponent<Door_Manager>();
+
+                            if (objectInFocus.name == "Closet")
+                            {
+                                dm.Open();
+                            }
+
+                            if (inventar.Contains("Key"))
+                            {
+                                dm.isLocked = false;
+                                dm.Open();
+                            }
+
+                        }
+
                     }
+                    
                 }
             }
         }
-
         else //No Object in sight
         {
             DisableUI();
-
-            if (itemsVisible)
-            {
-                GUILayout.Box("Inventar", boxStyle);
-                
-                foreach (string s in inventar)
-                {
-                    GUILayout.Button(s, buttonStyle);
-                }
-            }
-            
         }
+            
+        
 
         GUILayout.EndArea();
     }
