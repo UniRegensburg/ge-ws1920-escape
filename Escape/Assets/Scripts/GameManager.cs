@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     public int level;
     public AudioSource beep;
 
+    public Button playbutton;
+
     public GameObject explosion;
     public GameObject menuScreen;
     public GameObject player;
     public GameObject exit;
-
+    public GameObject Keys;
     
     public GameObject ui;
 
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     private String win = "Oh... you made it. I guess this round was just to easy. \nLet's see if you can manage to escape if the key is a little harder to find;)";
     private String lose = "Ouch - did that hurt? I'll give you another try. \nBut don't expect me to make it easier for you;)";
+    private String gameover = "All right... You found all the keys. \nGuess I'll let you go now:(\nCongrats on solving this game!";
 
     private void Awake()
     {
@@ -50,9 +53,18 @@ public class GameManager : MonoBehaviour
         timeLeft = 10.0f;
     }
 
+    private int keysLeft()
+    {
+        Transform[] children = Keys.GetComponentsInChildren<Transform>();
+        
+        return children.Length-1;
+    }
+
 
     void Update()
     {
+
+        
         timeLeft -= Time.deltaTime;
 
         if (gameRunning==true)
@@ -137,6 +149,8 @@ public class GameManager : MonoBehaviour
         beep.Stop();
         ui.SetActive(false);
         GameOver();
+
+        
        
     }
 
@@ -152,8 +166,14 @@ public class GameManager : MonoBehaviour
         
         beep.pitch = 1.0f;
         gamewon = false;
-        
-        
+
+        if (keysLeft() == 0)
+        {
+            txt.text = gameover;
+            Destroy(playbutton);
+        }
+
+
     }
 
     
